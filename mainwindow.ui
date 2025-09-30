@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>999</width>
+    <width>1000</width>
     <height>542</height>
    </rect>
   </property>
@@ -17,7 +17,11 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>CamHost</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="qrc/qrc.qrc">
+    <normaloff>:/icon.ico</normaloff>:/icon.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="VideoWidget" name="widget_videoFront" native="true">
@@ -30,10 +34,12 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border: 3px dashed black;</string>
+     <string notr="true">VideoWidget {
+    border: 3px dashed black;
+}</string>
     </property>
    </widget>
-   <widget class="QWidget" name="widget_videoSide" native="true">
+   <widget class="VideoWidget" name="widget_videoSide" native="true">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -43,7 +49,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QWidget {
+     <string notr="true">VideoWidget {
     border: 3px dashed black;
 }</string>
     </property>
@@ -137,13 +143,13 @@
    </widget>
    <widget class="QPushButton" name="pushButton_chooseFile_videoFront">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>50</y>
-      <width>111</width>
+      <width>321</width>
       <height>23</height>
      </rect>
     </property>
@@ -159,13 +165,13 @@
    </widget>
    <widget class="QPushButton" name="pushButton_chooseFile_videoSide">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
       <x>340</x>
       <y>50</y>
-      <width>111</width>
+      <width>321</width>
       <height>23</height>
      </rect>
     </property>
@@ -189,13 +195,13 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { border: 1px solid black;
+     <string notr="true">QLabel { 
 			
 	font: 75 12pt &quot;Arial&quot;;
 }</string>
     </property>
     <property name="text">
-     <string>Front</string>
+     <string>2D-Front</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -211,13 +217,13 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { border: 1px solid black;
+     <string notr="true">QLabel { 
 			
 	font: 75 12pt &quot;Arial&quot;;
 }</string>
     </property>
     <property name="text">
-     <string>Side</string>
+     <string>2D-Side</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -316,6 +322,9 @@
      <string>Reason</string>
     </property>
     <widget class="QPushButton" name="pushButton_reason_start">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -334,26 +343,10 @@
       <string>Start</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_reason_pause">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
-       <y>70</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton { border: 1px solid black;
-			
-	font: 75 12pt &quot;Arial&quot;;
-}</string>
-     </property>
-     <property name="text">
-      <string>Pause</string>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButton_reason_end">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>170</x>
@@ -394,7 +387,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton_">
+   <widget class="QPushButton" name="pushButton_synthesis">
     <property name="geometry">
      <rect>
       <x>670</x>
@@ -408,7 +401,8 @@
 			
 	font: 75 14pt &quot;Arial&quot;;
 	border-radius: 8px; /* 设置圆角 */
-
+	
+	background-color: rgb(255, 0, 0);
 }</string>
     </property>
     <property name="text">
@@ -513,13 +507,149 @@
      <string>Pause</string>
     </property>
    </widget>
+   <widget class="QRadioButton" name="radioButton">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>470</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	font: 75 14pt &quot;Arial&quot;;\n	border-radius: 8px; /* 设置圆角 */\n\n</string>
+    </property>
+    <property name="text">
+     <string>isMark</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_1">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>4</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+			
+	font: 75 12pt &quot;Arial&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>3D-View</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_fpsFront">
+    <property name="geometry">
+     <rect>
+      <x>261</x>
+      <y>80</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> border: 1px solid black;
+			
+	font: 75 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="minimum">
+     <number>10</number>
+    </property>
+    <property name="maximum">
+     <number>120</number>
+    </property>
+    <property name="singleStep">
+     <number>10</number>
+    </property>
+    <property name="value">
+     <number>60</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>80</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel { 
+			
+	font: 75 12pt &quot;Arial&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>FPS:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>80</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel { 
+			
+	font: 75 12pt &quot;Arial&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>FPS:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_fpsSide">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>80</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> border: 1px solid black;
+			
+	font: 75 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="minimum">
+     <number>10</number>
+    </property>
+    <property name="maximum">
+     <number>120</number>
+    </property>
+    <property name="singleStep">
+     <number>10</number>
+    </property>
+    <property name="value">
+     <number>60</number>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>999</width>
+     <width>1000</width>
      <height>22</height>
     </rect>
    </property>
@@ -547,6 +677,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="qrc/qrc.qrc"/>
+ </resources>
  <connections/>
 </ui>

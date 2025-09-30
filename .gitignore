@@ -1,3 +1,13 @@
 /src/__pycache__
 .zip
 /.vscode
+/src/build
+/src/dist
+/src/*.spec
+/src/__pycache__
+/src/main.build
+/src/main.dist
+/src/*.exe
+/src/*.cmd
+/src/*.xml
+/src/*.pdb

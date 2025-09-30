@@ -14,21 +14,26 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(999, 542)
+        MainWindow.resize(1000, 542)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.widget_videoFront = VideoWidget(self.centralwidget)
         self.widget_videoFront.setGeometry(QtCore.QRect(10, 110, 320, 240))
-        self.widget_videoFront.setStyleSheet("border: 3px dashed black;")
+        self.widget_videoFront.setStyleSheet("VideoWidget {\n"
+"    border: 3px dashed black;\n"
+"}")
         self.widget_videoFront.setObjectName("widget_videoFront")
-        self.widget_videoSide = QtWidgets.QWidget(self.centralwidget)
+        self.widget_videoSide = VideoWidget(self.centralwidget)
         self.widget_videoSide.setGeometry(QtCore.QRect(340, 110, 320, 240))
-        self.widget_videoSide.setStyleSheet("QWidget {\n"
+        self.widget_videoSide.setStyleSheet("VideoWidget {\n"
 "    border: 3px dashed black;\n"
 "}")
         self.widget_videoSide.setObjectName("widget_videoSide")
@@ -61,16 +66,16 @@ class Ui_MainWindow(object):
         self.comboBox_side.addItem("")
         self.comboBox_side.addItem("")
         self.pushButton_chooseFile_videoFront = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_chooseFile_videoFront.setEnabled(False)
-        self.pushButton_chooseFile_videoFront.setGeometry(QtCore.QRect(10, 50, 111, 23))
+        self.pushButton_chooseFile_videoFront.setEnabled(True)
+        self.pushButton_chooseFile_videoFront.setGeometry(QtCore.QRect(10, 50, 321, 23))
         self.pushButton_chooseFile_videoFront.setStyleSheet("QPushButton { border: 1px solid black;\n"
 "            \n"
 "    font: 75 12pt \"Arial\";\n"
 "}")
         self.pushButton_chooseFile_videoFront.setObjectName("pushButton_chooseFile_videoFront")
         self.pushButton_chooseFile_videoSide = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_chooseFile_videoSide.setEnabled(False)
-        self.pushButton_chooseFile_videoSide.setGeometry(QtCore.QRect(340, 50, 111, 23))
+        self.pushButton_chooseFile_videoSide.setEnabled(True)
+        self.pushButton_chooseFile_videoSide.setGeometry(QtCore.QRect(340, 50, 321, 23))
         self.pushButton_chooseFile_videoSide.setStyleSheet("QPushButton { border: 1px solid black;\n"
 "            \n"
 "    font: 75 12pt \"Arial\";\n"
@@ -78,7 +83,7 @@ class Ui_MainWindow(object):
         self.pushButton_chooseFile_videoSide.setObjectName("pushButton_chooseFile_videoSide")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(10, 80, 81, 21))
-        self.label.setStyleSheet("QLabel { border: 1px solid black;\n"
+        self.label.setStyleSheet("QLabel { \n"
 "            \n"
 "    font: 75 12pt \"Arial\";\n"
 "}")
@@ -86,7 +91,7 @@ class Ui_MainWindow(object):
         self.label.setObjectName("label")
         self.label_ = QtWidgets.QLabel(self.centralwidget)
         self.label_.setGeometry(QtCore.QRect(340, 80, 81, 21))
-        self.label_.setStyleSheet("QLabel { border: 1px solid black;\n"
+        self.label_.setStyleSheet("QLabel { \n"
 "            \n"
 "    font: 75 12pt \"Arial\";\n"
 "}")
@@ -126,20 +131,15 @@ class Ui_MainWindow(object):
 "    font: 75 12pt \"Arial\";")
         self.groupBox_2.setObjectName("groupBox_2")
         self.pushButton_reason_start = QtWidgets.QPushButton(self.groupBox_2)
+        self.pushButton_reason_start.setEnabled(False)
         self.pushButton_reason_start.setGeometry(QtCore.QRect(10, 70, 75, 23))
         self.pushButton_reason_start.setStyleSheet("QPushButton { border: 1px solid black;\n"
 "            \n"
 "    font: 75 12pt \"Arial\";\n"
 "}")
         self.pushButton_reason_start.setObjectName("pushButton_reason_start")
-        self.pushButton_reason_pause = QtWidgets.QPushButton(self.groupBox_2)
-        self.pushButton_reason_pause.setGeometry(QtCore.QRect(90, 70, 75, 23))
-        self.pushButton_reason_pause.setStyleSheet("QPushButton { border: 1px solid black;\n"
-"            \n"
-"    font: 75 12pt \"Arial\";\n"
-"}")
-        self.pushButton_reason_pause.setObjectName("pushButton_reason_pause")
         self.pushButton_reason_end = QtWidgets.QPushButton(self.groupBox_2)
+        self.pushButton_reason_end.setEnabled(False)
         self.pushButton_reason_end.setGeometry(QtCore.QRect(170, 70, 75, 23))
         self.pushButton_reason_end.setStyleSheet("QPushButton { border: 1px solid black;\n"
 "            \n"
@@ -155,15 +155,16 @@ class Ui_MainWindow(object):
 "\n"
 "}")
         self.pushButton_chooseFile_model.setObjectName("pushButton_chooseFile_model")
-        self.pushButton_ = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_.setGeometry(QtCore.QRect(670, 380, 181, 41))
-        self.pushButton_.setStyleSheet("QPushButton { border: 2px solid black;\n"
+        self.pushButton_synthesis = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_synthesis.setGeometry(QtCore.QRect(670, 380, 181, 41))
+        self.pushButton_synthesis.setStyleSheet("QPushButton { border: 2px solid black;\n"
 "            \n"
 "    font: 75 14pt \"Arial\";\n"
 "    border-radius: 8px; /* 设置圆角 */\n"
-"\n"
+"    \n"
+"    background-color: rgb(255, 0, 0);\n"
 "}")
-        self.pushButton_.setObjectName("pushButton_")
+        self.pushButton_synthesis.setObjectName("pushButton_synthesis")
         self.groupBox_3 = QtWidgets.QGroupBox(self.centralwidget)
         self.groupBox_3.setGeometry(QtCore.QRect(870, 380, 111, 111))
         self.groupBox_3.setStyleSheet("border: 2px dashed black;\n"
@@ -202,9 +203,57 @@ class Ui_MainWindow(object):
 "\n"
 "}")
         self.pushButton_pausePlay.setObjectName("pushButton_pausePlay")
+        self.radioButton = QtWidgets.QRadioButton(self.centralwidget)
+        self.radioButton.setGeometry(QtCore.QRect(290, 470, 101, 31))
+        self.radioButton.setStyleSheet("    font: 75 14pt \"Arial\";\\n    border-radius: 8px; /* 设置圆角 */\\n\\n")
+        self.radioButton.setObjectName("radioButton")
+        self.label_1 = QtWidgets.QLabel(self.centralwidget)
+        self.label_1.setGeometry(QtCore.QRect(670, 4, 81, 21))
+        self.label_1.setStyleSheet("QLabel {\n"
+"            \n"
+"    font: 75 12pt \"Arial\";\n"
+"}")
+        self.label_1.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_1.setObjectName("label_1")
+        self.spinBox_fpsFront = QtWidgets.QSpinBox(self.centralwidget)
+        self.spinBox_fpsFront.setGeometry(QtCore.QRect(261, 80, 71, 22))
+        self.spinBox_fpsFront.setStyleSheet(" border: 1px solid black;\n"
+"            \n"
+"    font: 75 12pt \"Arial\";")
+        self.spinBox_fpsFront.setMinimum(10)
+        self.spinBox_fpsFront.setMaximum(120)
+        self.spinBox_fpsFront.setSingleStep(10)
+        self.spinBox_fpsFront.setProperty("value", 60)
+        self.spinBox_fpsFront.setObjectName("spinBox_fpsFront")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(180, 80, 81, 21))
+        self.label_2.setStyleSheet("QLabel { \n"
+"            \n"
+"    font: 75 12pt \"Arial\";\n"
+"}")
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(510, 80, 81, 21))
+        self.label_3.setStyleSheet("QLabel { \n"
+"            \n"
+"    font: 75 12pt \"Arial\";\n"
+"}")
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setObjectName("label_3")
+        self.spinBox_fpsSide = QtWidgets.QSpinBox(self.centralwidget)
+        self.spinBox_fpsSide.setGeometry(QtCore.QRect(590, 80, 71, 22))
+        self.spinBox_fpsSide.setStyleSheet(" border: 1px solid black;\n"
+"            \n"
+"    font: 75 12pt \"Arial\";")
+        self.spinBox_fpsSide.setMinimum(10)
+        self.spinBox_fpsSide.setMaximum(120)
+        self.spinBox_fpsSide.setSingleStep(10)
+        self.spinBox_fpsSide.setProperty("value", 60)
+        self.spinBox_fpsSide.setObjectName("spinBox_fpsSide")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 999, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1000, 22))
         self.menubar.setObjectName("menubar")
         self.menuTool = QtWidgets.QMenu(self.menubar)
         self.menuTool.setObjectName("menuTool")
@@ -223,7 +272,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "CamHost"))
         self.comboBox_front.setItemText(0, _translate("MainWindow", "0"))
         self.comboBox_front.setItemText(1, _translate("MainWindow", "1"))
         self.comboBox_front.setItemText(2, _translate("MainWindow", "2"))
@@ -234,23 +283,27 @@ class Ui_MainWindow(object):
         self.comboBox_side.setItemText(3, _translate("MainWindow", "File"))
         self.pushButton_chooseFile_videoFront.setText(_translate("MainWindow", "Chose File"))
         self.pushButton_chooseFile_videoSide.setText(_translate("MainWindow", "Chose File"))
-        self.label.setText(_translate("MainWindow", "Front"))
-        self.label_.setText(_translate("MainWindow", "Side"))
+        self.label.setText(_translate("MainWindow", "2D-Front"))
+        self.label_.setText(_translate("MainWindow", "2D-Side"))
         self.groupBox.setTitle(_translate("MainWindow", "Save Video"))
         self.pushButton_SaveVideo_start.setText(_translate("MainWindow", "Start"))
         self.pushButton_SaveVideo_pause.setText(_translate("MainWindow", "Pause"))
         self.pushButton_SaveVideo_end.setText(_translate("MainWindow", "End"))
         self.groupBox_2.setTitle(_translate("MainWindow", "Reason"))
         self.pushButton_reason_start.setText(_translate("MainWindow", "Start"))
-        self.pushButton_reason_pause.setText(_translate("MainWindow", "Pause"))
         self.pushButton_reason_end.setText(_translate("MainWindow", "End"))
         self.pushButton_chooseFile_model.setText(_translate("MainWindow", "Load Model"))
-        self.pushButton_.setText(_translate("MainWindow", "Synthesis"))
+        self.pushButton_synthesis.setText(_translate("MainWindow", "Synthesis"))
         self.groupBox_3.setTitle(_translate("MainWindow", "Data Save"))
         self.pushButton_10.setText(_translate("MainWindow", "Start"))
         self.pushButton_12.setText(_translate("MainWindow", "End"))
         self.pushButton_startPlay.setText(_translate("MainWindow", "Start"))
         self.pushButton_pausePlay.setText(_translate("MainWindow", "Pause"))
+        self.radioButton.setText(_translate("MainWindow", "isMark"))
+        self.label_1.setText(_translate("MainWindow", "3D-View"))
+        self.label_2.setText(_translate("MainWindow", "FPS:"))
+        self.label_3.setText(_translate("MainWindow", "FPS:"))
         self.menuTool.setTitle(_translate("MainWindow", "Theme"))
         self.actiontheme.setText(_translate("MainWindow", "theme"))
 from videowidget import VideoWidget
+import qrc_rc
