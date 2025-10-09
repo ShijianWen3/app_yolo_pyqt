@@ -1,5 +1,5 @@
 ## 2D Synthesis 3D GUI
-### 这是一个用pyqt5编写的GUI程序, 用于https://github.com/ShijianWen3/ball_track项目的数据采集和演示
+### 这是一个用pyqt5编写的GUI程序, 用于 https://github.com/ShijianWen3/ball_track 项目的数据采集和演示
 ---
 #### 🚀目前已完成基本功能
 
