@@ -1,4 +1,5 @@
 import torch
+import torchvision #解决pytorch本身的bug, 确保torchvision提前导入
 import cv2
 import numpy as np
 from ultralytics import YOLO
