@@ -112,11 +112,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def startPlay(self):
         
-        if self.comboBox_front.currentIndex() != 3:
+        if self.comboBox_front.currentIndex() != 4:
             self.widget_videoFront.capIndex = self.comboBox_front.currentIndex()
         else:
             self.widget_videoFront.isCapFromFile = True
-        if self.comboBox_side.currentIndex() != 3:
+        if self.comboBox_side.currentIndex() != 4:
             self.widget_videoSide.capIndex = self.comboBox_side.currentIndex()
         else:
             self.widget_videoSide.isCapFromFile = True

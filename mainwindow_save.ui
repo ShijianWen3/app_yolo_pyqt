@@ -101,11 +101,6 @@
     </item>
     <item>
      <property name="text">
-      <string>3</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
       <string>File</string>
      </property>
     </item>
@@ -138,11 +133,6 @@
     <item>
      <property name="text">
       <string>2</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>3</string>
      </property>
     </item>
     <item>
@@ -239,11 +229,86 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>360</y>
+      <width>251</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px dashed black;
+			
+	font: 75 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="title">
+     <string>Save Video</string>
+    </property>
+    <widget class="QPushButton" name="pushButton_SaveVideo_start">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { border: 1px solid black;
+			
+	font: 75 12pt &quot;Arial&quot;;
+}</string>
+     </property>
+     <property name="text">
+      <string>Start</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_SaveVideo_pause">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>40</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { border: 1px solid black;
+			
+	font: 75 12pt &quot;Arial&quot;;
+}</string>
+     </property>
+     <property name="text">
+      <string>Pause</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_SaveVideo_end">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>40</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { border: 1px solid black;
+			
+	font: 75 12pt &quot;Arial&quot;;
+}</string>
+     </property>
+     <property name="text">
+      <string>End</string>
+     </property>
+    </widget>
+   </widget>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>370</y>
+      <x>400</x>
+      <y>360</y>
       <width>261</width>
       <height>111</height>
      </rect>
@@ -325,8 +390,8 @@
    <widget class="QPushButton" name="pushButton_synthesis">
     <property name="geometry">
      <rect>
-      <x>750</x>
-      <y>370</y>
+      <x>670</x>
+      <y>380</y>
       <width>181</width>
       <height>41</height>
      </rect>
@@ -344,10 +409,66 @@
      <string>Synthesis</string>
     </property>
    </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>870</x>
+      <y>380</y>
+      <width>111</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px dashed black;
+			
+	font: 75 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="title">
+     <string>Data Save</string>
+    </property>
+    <widget class="QPushButton" name="pushButton_10">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>91</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { border: 1px solid black;
+			
+	font: 75 12pt &quot;Arial&quot;;
+}</string>
+     </property>
+     <property name="text">
+      <string>Start</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_12">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>91</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { border: 1px solid black;
+			
+	font: 75 12pt &quot;Arial&quot;;
+}</string>
+     </property>
+     <property name="text">
+      <string>End</string>
+     </property>
+    </widget>
+   </widget>
    <widget class="QPushButton" name="pushButton_startPlay">
     <property name="geometry">
      <rect>
-      <x>115</x>
+      <x>290</x>
       <y>360</y>
       <width>75</width>
       <height>23</height>
@@ -368,7 +489,7 @@
    <widget class="QPushButton" name="pushButton_pausePlay">
     <property name="geometry">
      <rect>
-      <x>115</x>
+      <x>290</x>
       <y>440</y>
       <width>75</width>
       <height>23</height>
@@ -389,7 +510,7 @@
    <widget class="QRadioButton" name="radioButton">
     <property name="geometry">
      <rect>
-      <x>115</x>
+      <x>290</x>
       <y>470</y>
       <width>101</width>
       <height>31</height>

@@ -54,6 +54,7 @@ class Ui_MainWindow(object):
         self.comboBox_front.addItem("")
         self.comboBox_front.addItem("")
         self.comboBox_front.addItem("")
+        self.comboBox_front.addItem("")
         self.comboBox_side = QtWidgets.QComboBox(self.centralwidget)
         self.comboBox_side.setGeometry(QtCore.QRect(340, 20, 91, 22))
         self.comboBox_side.setStyleSheet("QComboBox { border: 1px solid black;\n"
@@ -61,6 +62,7 @@ class Ui_MainWindow(object):
 "    font: 75 12pt \"Arial\";\n"
 "}")
         self.comboBox_side.setObjectName("comboBox_side")
+        self.comboBox_side.addItem("")
         self.comboBox_side.addItem("")
         self.comboBox_side.addItem("")
         self.comboBox_side.addItem("")
@@ -97,35 +99,8 @@ class Ui_MainWindow(object):
 "}")
         self.label_.setAlignment(QtCore.Qt.AlignCenter)
         self.label_.setObjectName("label_")
-        self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox.setGeometry(QtCore.QRect(10, 360, 251, 101))
-        self.groupBox.setStyleSheet("border: 2px dashed black;\n"
-"            \n"
-"    font: 75 12pt \"Arial\";")
-        self.groupBox.setObjectName("groupBox")
-        self.pushButton_SaveVideo_start = QtWidgets.QPushButton(self.groupBox)
-        self.pushButton_SaveVideo_start.setGeometry(QtCore.QRect(10, 40, 75, 23))
-        self.pushButton_SaveVideo_start.setStyleSheet("QPushButton { border: 1px solid black;\n"
-"            \n"
-"    font: 75 12pt \"Arial\";\n"
-"}")
-        self.pushButton_SaveVideo_start.setObjectName("pushButton_SaveVideo_start")
-        self.pushButton_SaveVideo_pause = QtWidgets.QPushButton(self.groupBox)
-        self.pushButton_SaveVideo_pause.setGeometry(QtCore.QRect(90, 40, 75, 23))
-        self.pushButton_SaveVideo_pause.setStyleSheet("QPushButton { border: 1px solid black;\n"
-"            \n"
-"    font: 75 12pt \"Arial\";\n"
-"}")
-        self.pushButton_SaveVideo_pause.setObjectName("pushButton_SaveVideo_pause")
-        self.pushButton_SaveVideo_end = QtWidgets.QPushButton(self.groupBox)
-        self.pushButton_SaveVideo_end.setGeometry(QtCore.QRect(170, 40, 75, 23))
-        self.pushButton_SaveVideo_end.setStyleSheet("QPushButton { border: 1px solid black;\n"
-"            \n"
-"    font: 75 12pt \"Arial\";\n"
-"}")
-        self.pushButton_SaveVideo_end.setObjectName("pushButton_SaveVideo_end")
         self.groupBox_2 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_2.setGeometry(QtCore.QRect(400, 360, 261, 111))
+        self.groupBox_2.setGeometry(QtCore.QRect(340, 370, 261, 111))
         self.groupBox_2.setStyleSheet("border: 2px dashed black;\n"
 "            \n"
 "    font: 75 12pt \"Arial\";")
@@ -156,7 +131,7 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_chooseFile_model.setObjectName("pushButton_chooseFile_model")
         self.pushButton_synthesis = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_synthesis.setGeometry(QtCore.QRect(670, 380, 181, 41))
+        self.pushButton_synthesis.setGeometry(QtCore.QRect(750, 370, 181, 41))
         self.pushButton_synthesis.setStyleSheet("QPushButton { border: 2px solid black;\n"
 "            \n"
 "    font: 75 14pt \"Arial\";\n"
@@ -165,28 +140,8 @@ class Ui_MainWindow(object):
 "    background-color: rgb(255, 0, 0);\n"
 "}")
         self.pushButton_synthesis.setObjectName("pushButton_synthesis")
-        self.groupBox_3 = QtWidgets.QGroupBox(self.centralwidget)
-        self.groupBox_3.setGeometry(QtCore.QRect(870, 380, 111, 111))
-        self.groupBox_3.setStyleSheet("border: 2px dashed black;\n"
-"            \n"
-"    font: 75 12pt \"Arial\";")
-        self.groupBox_3.setObjectName("groupBox_3")
-        self.pushButton_10 = QtWidgets.QPushButton(self.groupBox_3)
-        self.pushButton_10.setGeometry(QtCore.QRect(10, 40, 91, 23))
-        self.pushButton_10.setStyleSheet("QPushButton { border: 1px solid black;\n"
-"            \n"
-"    font: 75 12pt \"Arial\";\n"
-"}")
-        self.pushButton_10.setObjectName("pushButton_10")
-        self.pushButton_12 = QtWidgets.QPushButton(self.groupBox_3)
-        self.pushButton_12.setGeometry(QtCore.QRect(10, 70, 91, 23))
-        self.pushButton_12.setStyleSheet("QPushButton { border: 1px solid black;\n"
-"            \n"
-"    font: 75 12pt \"Arial\";\n"
-"}")
-        self.pushButton_12.setObjectName("pushButton_12")
         self.pushButton_startPlay = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_startPlay.setGeometry(QtCore.QRect(290, 360, 75, 23))
+        self.pushButton_startPlay.setGeometry(QtCore.QRect(115, 360, 75, 23))
         self.pushButton_startPlay.setStyleSheet("QPushButton { border: 2px solid black;\n"
 "            \n"
 "    font: 75 14pt \"Arial\";\n"
@@ -195,7 +150,7 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_startPlay.setObjectName("pushButton_startPlay")
         self.pushButton_pausePlay = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_pausePlay.setGeometry(QtCore.QRect(290, 440, 75, 23))
+        self.pushButton_pausePlay.setGeometry(QtCore.QRect(115, 440, 75, 23))
         self.pushButton_pausePlay.setStyleSheet("QPushButton { border: 2px solid black;\n"
 "            \n"
 "    font: 75 14pt \"Arial\";\n"
@@ -204,7 +159,7 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_pausePlay.setObjectName("pushButton_pausePlay")
         self.radioButton = QtWidgets.QRadioButton(self.centralwidget)
-        self.radioButton.setGeometry(QtCore.QRect(290, 470, 101, 31))
+        self.radioButton.setGeometry(QtCore.QRect(115, 470, 101, 31))
         self.radioButton.setStyleSheet("    font: 75 14pt \"Arial\";\\n    border-radius: 8px; /* 设置圆角 */\\n\\n")
         self.radioButton.setObjectName("radioButton")
         self.label_1 = QtWidgets.QLabel(self.centralwidget)
@@ -276,27 +231,22 @@ class Ui_MainWindow(object):
         self.comboBox_front.setItemText(0, _translate("MainWindow", "0"))
         self.comboBox_front.setItemText(1, _translate("MainWindow", "1"))
         self.comboBox_front.setItemText(2, _translate("MainWindow", "2"))
-        self.comboBox_front.setItemText(3, _translate("MainWindow", "File"))
+        self.comboBox_front.setItemText(3, _translate("MainWindow", "3"))
+        self.comboBox_front.setItemText(4, _translate("MainWindow", "File"))
         self.comboBox_side.setItemText(0, _translate("MainWindow", "0"))
         self.comboBox_side.setItemText(1, _translate("MainWindow", "1"))
         self.comboBox_side.setItemText(2, _translate("MainWindow", "2"))
-        self.comboBox_side.setItemText(3, _translate("MainWindow", "File"))
+        self.comboBox_side.setItemText(3, _translate("MainWindow", "3"))
+        self.comboBox_side.setItemText(4, _translate("MainWindow", "File"))
         self.pushButton_chooseFile_videoFront.setText(_translate("MainWindow", "Chose File"))
         self.pushButton_chooseFile_videoSide.setText(_translate("MainWindow", "Chose File"))
         self.label.setText(_translate("MainWindow", "2D-Front"))
         self.label_.setText(_translate("MainWindow", "2D-Side"))
-        self.groupBox.setTitle(_translate("MainWindow", "Save Video"))
-        self.pushButton_SaveVideo_start.setText(_translate("MainWindow", "Start"))
-        self.pushButton_SaveVideo_pause.setText(_translate("MainWindow", "Pause"))
-        self.pushButton_SaveVideo_end.setText(_translate("MainWindow", "End"))
         self.groupBox_2.setTitle(_translate("MainWindow", "Reason"))
         self.pushButton_reason_start.setText(_translate("MainWindow", "Start"))
         self.pushButton_reason_end.setText(_translate("MainWindow", "End"))
         self.pushButton_chooseFile_model.setText(_translate("MainWindow", "Load Model"))
         self.pushButton_synthesis.setText(_translate("MainWindow", "Synthesis"))
-        self.groupBox_3.setTitle(_translate("MainWindow", "Data Save"))
-        self.pushButton_10.setText(_translate("MainWindow", "Start"))
-        self.pushButton_12.setText(_translate("MainWindow", "End"))
         self.pushButton_startPlay.setText(_translate("MainWindow", "Start"))
         self.pushButton_pausePlay.setText(_translate("MainWindow", "Pause"))
         self.radioButton.setText(_translate("MainWindow", "isMark"))
