@@ -325,9 +325,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if not self.video_saver_front.is_recording and not self.video_saver_side.is_recording:
             self.start_saveVideo()
             self.pushButton_videoSave.setText("Saving")
+            self.pushButton_videoSave.setStyleSheet("QPushButton { border: 2px solid black;font: 75 14pt 'Arial';border-radius: 8px; /* 设置圆角 */background-color: rgb(0, 255, 0);}")
         else:
             self.stop_saveVideo()
             self.pushButton_videoSave.setText("Save")
+            self.pushButton_videoSave.setStyleSheet("QPushButton { border: 2px solid black;font: 75 14pt 'Arial';border-radius: 8px; /* 设置圆角 */background-color: rgb(255, 170, 255);}")
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     
