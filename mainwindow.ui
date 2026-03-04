@@ -325,8 +325,8 @@
    <widget class="QPushButton" name="pushButton_synthesis">
     <property name="geometry">
      <rect>
-      <x>750</x>
-      <y>370</y>
+      <x>670</x>
+      <y>410</y>
       <width>181</width>
       <height>41</height>
      </rect>
@@ -342,64 +342,6 @@
     </property>
     <property name="text">
      <string>Synthesis</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_startPlay">
-    <property name="geometry">
-     <rect>
-      <x>115</x>
-      <y>360</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton { border: 2px solid black;
-			
-	font: 75 14pt &quot;Arial&quot;;
-	border-radius: 8px; /* 设置圆角 */
-
-}</string>
-    </property>
-    <property name="text">
-     <string>Start</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_pausePlay">
-    <property name="geometry">
-     <rect>
-      <x>115</x>
-      <y>440</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton { border: 2px solid black;
-			
-	font: 75 14pt &quot;Arial&quot;;
-	border-radius: 8px; /* 设置圆角 */
-
-}</string>
-    </property>
-    <property name="text">
-     <string>Pause</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton">
-    <property name="geometry">
-     <rect>
-      <x>115</x>
-      <y>470</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">	font: 75 14pt &quot;Arial&quot;;\n	border-radius: 8px; /* 设置圆角 */\n\n</string>
-    </property>
-    <property name="text">
-     <string>isMark</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_1">
@@ -521,6 +463,109 @@
     <property name="value">
      <number>60</number>
     </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_videoSave">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>400</y>
+      <width>71</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton { border: 2px solid black;
+			
+	font: 75 14pt &quot;Arial&quot;;
+	border-radius: 8px; /* 设置圆角 */
+	background-color: rgb(255, 170, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string>Save</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>360</y>
+      <width>121</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px dashed black;
+			
+	font: 75 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="title">
+     <string>Capture</string>
+    </property>
+    <widget class="QPushButton" name="pushButton_startPlay">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>80</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { border: 2px solid black;
+			
+	font: 75 14pt &quot;Arial&quot;;
+	border-radius: 8px; /* 设置圆角 */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Start</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_pausePlay">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>52</y>
+       <width>80</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton { border: 2px solid black;
+			
+	font: 75 14pt &quot;Arial&quot;;
+	border-radius: 8px; /* 设置圆角 */
+
+}</string>
+     </property>
+     <property name="text">
+      <string>Pause</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>90</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">	font: 75 14pt &quot;Arial&quot;;\n	border-radius: 8px; /* 设置圆角 */\n\n</string>
+     </property>
+     <property name="text">
+      <string>isMark</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

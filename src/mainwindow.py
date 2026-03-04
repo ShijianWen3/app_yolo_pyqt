@@ -6,6 +6,9 @@ import sys
 import os
 from reason import YOLOThread
 from synthesis import Trajectory3DVisualizerThread, Auto3DCanvas
+
+# 视频保存类
+from video_saver import VideoSaver
 def compile_qrc_file():
     import subprocess
     """编译qrc文件为Python模块"""
@@ -86,6 +89,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.detFront = None
         self.detSide = None
 
+        self.video_saver_front = VideoSaver(video_widget=self.widget_videoFront, save_dir="./saved_videos/front", fps=15)
+        self.video_saver_side = VideoSaver(video_widget=self.widget_videoSide, save_dir="./saved_videos/side", fps=15)
+
     def signalconnect(self):
         self.pushButton_chooseFile_model.clicked.connect(self.chooseFile_model)
         self.pushButton_startPlay.clicked.connect(self.startPlay)
@@ -95,6 +101,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_reason_start.clicked.connect(self.startReason)
         self.pushButton_reason_end.clicked.connect(self.EndReason)
         self.pushButton_synthesis.clicked.connect(self.synthesis)
+        self.pushButton_videoSave.clicked.connect(self.toggle_saveVideo)
         # 添加调试连接
         # print("Signal connections established")
 
@@ -127,6 +134,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton_reason_start.setEnabled(True)
         self.pushButton_reason_end.setEnabled(True)
 
+        #允许录制
+        self.pushButton_videoSave.setEnabled(True)
+
     def chooseFile_video(self):
         file_path, _ = QFileDialog.getOpenFileName(self, "选择文件", "", "视频文件 (*.mp4 *.avi *.mov);;所有文件 (*)")
         # 如果选择了文件，打印文件路径
@@ -155,6 +165,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.pushButton_reason_start.setEnabled(False)
         self.pushButton_reason_end.setEnabled(False)
+
+        #禁止录制
+        self.pushButton_videoSave.setEnabled(False)
+
     def startReason(self):
         
         try:
@@ -290,6 +304,30 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.synthesis_thread.add_detection_results(self.detFront, self.detSide)
                 self.detFront = None
                 self.detSide = None
+    def start_saveVideo(self):
+
+        if self.video_saver_front.SaverStart():
+            print("前视视频保存已开始")
+        else:
+            print("前视视频保存已在进行中或启动失败")
+        if self.video_saver_side.SaverStart():
+            print("侧视视频保存已开始")
+        else:
+            print("侧视视频保存已在进行中或启动失败")
+
+    def stop_saveVideo(self):
+        path_front = self.video_saver_front.SaverEnd()
+        print(f"front video have been saved to:{path_front}")
+        path_side = self.video_saver_side.SaverEnd()
+        print(f"side video have been saved to:{path_side}")
+
+    def toggle_saveVideo(self):
+        if not self.video_saver_front.is_recording and not self.video_saver_side.is_recording:
+            self.start_saveVideo()
+            self.pushButton_videoSave.setText("Saving")
+        else:
+            self.stop_saveVideo()
+            self.pushButton_videoSave.setText("Save")
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     

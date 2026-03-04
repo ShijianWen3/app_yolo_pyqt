@@ -131,7 +131,7 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_chooseFile_model.setObjectName("pushButton_chooseFile_model")
         self.pushButton_synthesis = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_synthesis.setGeometry(QtCore.QRect(750, 370, 181, 41))
+        self.pushButton_synthesis.setGeometry(QtCore.QRect(670, 410, 181, 41))
         self.pushButton_synthesis.setStyleSheet("QPushButton { border: 2px solid black;\n"
 "            \n"
 "    font: 75 14pt \"Arial\";\n"
@@ -140,28 +140,6 @@ class Ui_MainWindow(object):
 "    background-color: rgb(255, 0, 0);\n"
 "}")
         self.pushButton_synthesis.setObjectName("pushButton_synthesis")
-        self.pushButton_startPlay = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_startPlay.setGeometry(QtCore.QRect(115, 360, 75, 23))
-        self.pushButton_startPlay.setStyleSheet("QPushButton { border: 2px solid black;\n"
-"            \n"
-"    font: 75 14pt \"Arial\";\n"
-"    border-radius: 8px; /* 设置圆角 */\n"
-"\n"
-"}")
-        self.pushButton_startPlay.setObjectName("pushButton_startPlay")
-        self.pushButton_pausePlay = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_pausePlay.setGeometry(QtCore.QRect(115, 440, 75, 23))
-        self.pushButton_pausePlay.setStyleSheet("QPushButton { border: 2px solid black;\n"
-"            \n"
-"    font: 75 14pt \"Arial\";\n"
-"    border-radius: 8px; /* 设置圆角 */\n"
-"\n"
-"}")
-        self.pushButton_pausePlay.setObjectName("pushButton_pausePlay")
-        self.radioButton = QtWidgets.QRadioButton(self.centralwidget)
-        self.radioButton.setGeometry(QtCore.QRect(115, 470, 101, 31))
-        self.radioButton.setStyleSheet("    font: 75 14pt \"Arial\";\\n    border-radius: 8px; /* 设置圆角 */\\n\\n")
-        self.radioButton.setObjectName("radioButton")
         self.label_1 = QtWidgets.QLabel(self.centralwidget)
         self.label_1.setGeometry(QtCore.QRect(670, 4, 81, 21))
         self.label_1.setStyleSheet("QLabel {\n"
@@ -206,6 +184,45 @@ class Ui_MainWindow(object):
         self.spinBox_fpsSide.setSingleStep(10)
         self.spinBox_fpsSide.setProperty("value", 60)
         self.spinBox_fpsSide.setObjectName("spinBox_fpsSide")
+        self.pushButton_videoSave = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_videoSave.setEnabled(False)
+        self.pushButton_videoSave.setGeometry(QtCore.QRect(220, 400, 71, 51))
+        self.pushButton_videoSave.setStyleSheet("QPushButton { border: 2px solid black;\n"
+"            \n"
+"    font: 75 14pt \"Arial\";\n"
+"    border-radius: 8px; /* 设置圆角 */\n"
+"    background-color: rgb(255, 170, 255);\n"
+"}")
+        self.pushButton_videoSave.setObjectName("pushButton_videoSave")
+        self.groupBox = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox.setGeometry(QtCore.QRect(50, 360, 121, 131))
+        self.groupBox.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.groupBox.setStyleSheet("border: 2px dashed black;\n"
+"            \n"
+"    font: 75 12pt \"Arial\";")
+        self.groupBox.setObjectName("groupBox")
+        self.pushButton_startPlay = QtWidgets.QPushButton(self.groupBox)
+        self.pushButton_startPlay.setGeometry(QtCore.QRect(20, 20, 80, 30))
+        self.pushButton_startPlay.setStyleSheet("QPushButton { border: 2px solid black;\n"
+"            \n"
+"    font: 75 14pt \"Arial\";\n"
+"    border-radius: 8px; /* 设置圆角 */\n"
+"\n"
+"}")
+        self.pushButton_startPlay.setObjectName("pushButton_startPlay")
+        self.pushButton_pausePlay = QtWidgets.QPushButton(self.groupBox)
+        self.pushButton_pausePlay.setGeometry(QtCore.QRect(20, 52, 80, 30))
+        self.pushButton_pausePlay.setStyleSheet("QPushButton { border: 2px solid black;\n"
+"            \n"
+"    font: 75 14pt \"Arial\";\n"
+"    border-radius: 8px; /* 设置圆角 */\n"
+"\n"
+"}")
+        self.pushButton_pausePlay.setObjectName("pushButton_pausePlay")
+        self.radioButton = QtWidgets.QRadioButton(self.groupBox)
+        self.radioButton.setGeometry(QtCore.QRect(20, 90, 81, 31))
+        self.radioButton.setStyleSheet("    font: 75 14pt \"Arial\";\\n    border-radius: 8px; /* 设置圆角 */\\n\\n")
+        self.radioButton.setObjectName("radioButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1000, 22))
@@ -247,12 +264,14 @@ class Ui_MainWindow(object):
         self.pushButton_reason_end.setText(_translate("MainWindow", "End"))
         self.pushButton_chooseFile_model.setText(_translate("MainWindow", "Load Model"))
         self.pushButton_synthesis.setText(_translate("MainWindow", "Synthesis"))
-        self.pushButton_startPlay.setText(_translate("MainWindow", "Start"))
-        self.pushButton_pausePlay.setText(_translate("MainWindow", "Pause"))
-        self.radioButton.setText(_translate("MainWindow", "isMark"))
         self.label_1.setText(_translate("MainWindow", "3D-View"))
         self.label_2.setText(_translate("MainWindow", "FPS:"))
         self.label_3.setText(_translate("MainWindow", "FPS:"))
+        self.pushButton_videoSave.setText(_translate("MainWindow", "Save"))
+        self.groupBox.setTitle(_translate("MainWindow", "Capture"))
+        self.pushButton_startPlay.setText(_translate("MainWindow", "Start"))
+        self.pushButton_pausePlay.setText(_translate("MainWindow", "Pause"))
+        self.radioButton.setText(_translate("MainWindow", "isMark"))
         self.menuTool.setTitle(_translate("MainWindow", "Theme"))
         self.actiontheme.setText(_translate("MainWindow", "theme"))
 from videowidget import VideoWidget

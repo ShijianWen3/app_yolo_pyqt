@@ -25,6 +25,10 @@ class VideoWidget(QWidget):
         # yolo model queue
         self.picQueue = queue.Queue(maxsize=MAX_QUEUE_SIZE)
         self.isReason = False
+
+        # ★ 帧回调钩子列表，供 VideoSaver 等外部组件注册
+        self._frame_callbacks = []
+
     def paintEvent(self, event: QPaintEvent):
         
         """绘制事件"""
@@ -124,8 +128,8 @@ class VideoWidget(QWidget):
             print(f'Exception opening capture: {e}')
             self.cap = None
             return False
+
     def loadframe(self):
-        
         """加载一帧图像"""
         if self.cap is not None:
             ret, frame = self.cap.read()
@@ -136,6 +140,14 @@ class VideoWidget(QWidget):
                     except queue.Empty:
                         pass
                 self.picQueue.put(frame)
+
+                # ★ 触发所有注册的帧回调（VideoSaver 通过此获取帧）
+                for cb in self._frame_callbacks:
+                    try:
+                        cb(frame)
+                    except Exception as e:
+                        print(f"[VideoWidget] 帧回调异常: {e}")
+
                 if self.isReason:
                     pass
                 else:

@@ -1,5 +1,5 @@
 /src/__pycache__
-.zip
+*.zip
 /.vscode
 /src/build
 /src/dist
@@ -11,3 +11,6 @@
 /src/*.cmd
 /src/*.xml
 /src/*.pdb
+/saved_videos
+*.txt
+*.md
