@@ -1,7 +1,7 @@
 # 2D Synthesis 3D GUI
 
 <div align="center">
-  <img src="./assets/app.png" style="zoom:33%;" />
+  <img src="./assets/chaos.png" style="zoom:33%;" />
 </div>
 
 >  这是一个用pyqt5编写的GUI上位机程序, 用于 https://github.com/ShijianWen3/ball_track 项目的数据采集和演示
