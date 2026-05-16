@@ -1,5 +1,15 @@
-## 2D Synthesis 3D GUI
-### 这是一个用pyqt5编写的GUI上位机程序, 用于 https://github.com/ShijianWen3/ball_track 项目的数据采集和演示
+# 2D Synthesis 3D GUI
+
+<div align="center">
+  <img src="./assets/app.png" style="zoom:33%;" />
+</div>
+
+>  这是一个用pyqt5编写的GUI上位机程序, 用于 https://github.com/ShijianWen3/ball_track 项目的数据采集和演示
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8+-blue?logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
+</p>
 ---
 #### 🚀目前已完成基本功能:
 
